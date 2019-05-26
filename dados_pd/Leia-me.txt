@@ -9,38 +9,21 @@ semana para dados referentes aos ônibus, provenientes dos arquivos buses_*.xml 
 maps_*.xml, além de dados obtidos da plataforma CEP aberto. Os datasets estão
 nomeados da seguinte forma:
 
-lista_onibus_pascoa  onibus_pascoa  coordenadas_pascoa   trajetos_pascoa   (dados de Páscoa 13/04/2017)
-lista_onibus_dom     onibus_dom     coordenadas_dom      trajetos_dom      (dados de Domingo 22/10/2017)
-lista_onibus_seg     onibus_seg     coordenadas_seg      trajetos_seg      (dados de Segunda-feira 23/10/2017)
-lista_onibus_ter     onibus_ter     coordenadas_ter      trajetos_ter      (dados de Terça-feira 24/10/2017)
-lista_onibus_qua     onibus_qua     coordenadas_qua      trajetos_qua      (dados de Quarta-feira 25/10/2017)
-lista_onibus_qui     onibus_qui     coordenadas_qui      trajetos_qui      (dados de Quinta-feira 26/10/2017)
-lista_onibus_sex     onibus_sex     coordenadas_sex      trajetos_sex      (dados de Sexta-feira 27/10/2017)
-lista_onibus_sab     onibus_sab     coordenadas_sab      trajetos_sab      (dados de Sábado 28/10/2017)
+onibus_pascoa  coordenadas_pascoa   trajetos_pascoa   (dados de Páscoa 13/04/2017)
+onibus_dom     coordenadas_dom      trajetos_dom      (dados de Domingo 22/10/2017)
+onibus_seg     coordenadas_seg      trajetos_seg      (dados de Segunda-feira 23/10/2017)
+onibus_ter     coordenadas_ter      trajetos_ter      (dados de Terça-feira 24/10/2017)
+onibus_qua     coordenadas_qua      trajetos_qua      (dados de Quarta-feira 25/10/2017)
+onibus_qui     coordenadas_qui      trajetos_qui      (dados de Quinta-feira 26/10/2017)
+onibus_sex     coordenadas_sex      trajetos_sex      (dados de Sexta-feira 27/10/2017)
+onibus_sab     coordenadas_sab      trajetos_sab      (dados de Sábado 28/10/2017)
 
 ------------------------------------------------------------------------------------------
 
-Os datasets lista_onibus_* estão formatados para uso com o objeto [cyclone/coll] da biblioteca
-Cyclone do Pd. Cada linha contém:
 
-<index>, <linha_de_onibus>;
+Os datasets onibus_* estão formatados para uso com o objeto [text] do Pd. Cada linha contém:
 
-
-Sendo:
-
-<index>: índice numérico para cada item da lista de linhas de ônibus.
-
-<linha_de_onibus>: código único da linha de ônibus por rota da cidade de São Paulo.
- Quando o último dígito é 0, representa  a rota de ida da linha e quando é 1 representa
- a rota de volta.
-
-
-------------------------------------------------------------------------------------------
-
-Os datasets onibus_* estão formatados para uso com o objeto [cyclone/coll] da biblioteca
-Cyclone do Pd. Cada linha contém:
-
-<bus id>, <start_time> <interval> <stops>;
+<bus id> <start_time> <interval> <stops>;
 
 
 Sendo:
@@ -65,10 +48,9 @@ Sendo:
 
 ------------------------------------------------------------------------------------------
 
-Os datasets coordenadas_* estão formatados para uso com o objeto [cyclone/coll] da
-biblioteca Cyclone do Pd. Cada linha contém:
+Os datasets coordenadas_* estão formatados para uso com o objeto [text] do Pd. Cada linha contém:
 
-<id>, <x> <y> <zona>;
+<id> <x> <y> <zona>;
 
 Sendo:
 
@@ -87,16 +69,17 @@ Sendo:
 
 ------------------------------------------------------------------------------------------
 
-Os datasets trajetos_* estão formatados para uso com o objeto [cyclone/coll] da
-biblioteca Cyclone do Pd. Cada linha contém:
+Os datasets trajetos_* estão formatados para uso com o objeto [text] do Pd. Cada linha contém:
 
-<id do trajeto>, <avgspeed>;
+<id do trajeto> <distância> <avgspeed>;
 
 Sendo:
 
 <id do trajeto>: Identificador de um link que faz ligação de dois determinados pontos  de
  paradas de ônibus da cidade. No nosso caso o ponto de saída e chegada de uma linha de
  ônibus.
+
+<distância>: Valor em metros do comprimento do trajeto.
 
 <avgspeed>: Lista que representa as velocidades médias de uma linha de ônibus, ao longo
  do dia. A lista possui 24 posições, variando de 0 a 23, onde cada posição da lista
